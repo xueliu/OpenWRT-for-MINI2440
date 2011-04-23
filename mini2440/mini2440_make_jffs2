@@ -1,0 +1,1 @@
+./staging_dir/host/bin/mkfs.jffs2 --pad --little-endian --squash -s 0x200 -n -e 16KiB -o /tftpboot/root.jffs2 -d root/

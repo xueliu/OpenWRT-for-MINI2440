@@ -1,0 +1,25 @@
+From 32bbeb555f373de7825ea7ea1b20f487eef9746f Mon Sep 17 00:00:00 2001
+From: xue liu <liuxuenetmail@gmail.com>
+Date: Fri, 29 Oct 2010 13:09:01 +0800
+Subject: [PATCH 3/3] Finally get rid of buzzer!
+
+---
+ lib_arm/board.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/lib_arm/board.c b/lib_arm/board.c
+index d598a82..757b909 100644
+--- a/lib_arm/board.c
++++ b/lib_arm/board.c
+@@ -144,7 +144,7 @@ static int display_banner (void)
+ {
+ #if defined(CONFIG_MINI2440_LED) 	
+ 	struct s3c24x0_gpio * const gpio = s3c24x0_get_base_gpio();
+-	writel(0x101, &gpio->GPBDAT);  //tekkamanninja
++	writel(0x100, &gpio->GPBDAT);  //tekkamanninja
+ #endif
+ 	printf ("\n\n%s\n\n", version_string);	
+ 	printf (" modified by tekkamanninja (tekkamanninja@163.com)\n");
+-- 
+1.7.0.4
+

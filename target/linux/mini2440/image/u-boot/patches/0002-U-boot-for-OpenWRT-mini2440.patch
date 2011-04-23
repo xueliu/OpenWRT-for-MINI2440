@@ -1,0 +1,26 @@
+From 70fd2f13990362688bab05a556e3101a2aebb5a5 Mon Sep 17 00:00:00 2001
+From: xue liu <liuxuenetmail@gmail.com>
+Date: Fri, 29 Oct 2010 12:46:36 +0800
+Subject: [PATCH 2/3] U-boot for OpenWRT mini2440.
+ Take out the annoiying buzzer.
+
+---
+ board/tekkamanninja/mini2440/mini2440.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/board/tekkamanninja/mini2440/mini2440.c b/board/tekkamanninja/mini2440/mini2440.c
+index 22bb118..df78634 100644
+--- a/board/tekkamanninja/mini2440/mini2440.c
++++ b/board/tekkamanninja/mini2440/mini2440.c
+@@ -166,7 +166,7 @@ int board_init (void)
+ 	icache_enable();
+ 	dcache_enable();
+ #if	defined(CONFIG_MINI2440_LED)
+-	gpio->GPBDAT = 0x00000181;
++	gpio->GPBDAT = 0x00000180; /* Take out the annoiying buzzer */
+ #endif
+ 	return 0;
+ }
+-- 
+1.7.0.4
+
